@@ -1,0 +1,22 @@
+{
+  "name": "MRCbot",
+  "version": "0.0.1-alpha",
+  "description": "Custom role colors for the mobile version of discord",
+  "main": "dist/bot.js",
+  "repository": "https://github.com/ItsRauf/MRCbot.git",
+  "author": "Rauf",
+  "license": "GPL-3.0-or-later",
+  "private": false,
+  "devDependencies": {
+    "@types/node": "^13.11.0",
+    "@typescript-eslint/eslint-plugin": "^2.27.0",
+    "@typescript-eslint/parser": "^2.27.0",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.1",
+    "eslint-config-typescript": "^3.0.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^3.1.2",
+    "prettier": "^2.0.4",
+    "typescript": "^3.8.3"
+  }
+}
