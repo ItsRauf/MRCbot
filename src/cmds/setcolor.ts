@@ -10,6 +10,7 @@ function validateHexColor(color: string): boolean {
 async function findRole(msg: Message, role: string) {
   const guildRole =
     msg.guild?.roles.cache.get(role) ||
+    msg.mentions.roles.first() ||
     msg.guild?.roles.cache.find(
       r => r.name.toLowerCase() === role.toLowerCase()
     );
