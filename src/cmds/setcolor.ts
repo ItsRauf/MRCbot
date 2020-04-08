@@ -9,7 +9,9 @@ function validateHexColor(color: string): boolean {
 export const cmd = new Command(
   'setcolor',
   async (MRC, msg, [rID, hexColor, ...reason]) => {
-    if (!rID) {
+    if (!msg.member?.permissions.has('MANAGE_ROLES')) {
+      // Do Nothing
+    } else if (!rID) {
       msg.channel.send('Missing parameter: `role id`');
     } else if (!hexColor) {
       msg.channel.send('Missing parameter: `hex code`');
