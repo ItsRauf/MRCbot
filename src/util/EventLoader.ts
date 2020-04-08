@@ -9,7 +9,7 @@ export async function EventLoader(MRC: MRCClient): Promise<void> {
   const eventFiles = await readDir('./build/events');
   for await (const file of eventFiles) {
     if (file.endsWith('js') && file !== 'Event.js') {
-      const { event } = await import(`./${file}`);
+      const { event } = await import(`../events/${file}`);
       if (event instanceof Event) {
         MRC.logger.info(`Registered Event: ${event.name}`);
         MRC.on(event.name, (...args: []) => {
