@@ -1,6 +1,6 @@
 {
   "name": "MRCbot",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Custom role colors for the mobile version of discord",
   "main": "dist/bot.js",
   "repository": "https://github.com/ItsRauf/MRCbot.git",
