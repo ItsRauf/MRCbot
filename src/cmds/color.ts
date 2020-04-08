@@ -7,12 +7,12 @@ function validateHexColor(color: string): boolean {
 }
 
 export const cmd = new Command(
-  'setcolor',
+  'color',
   async (MRC, msg, [hexColor]) => {
     if (!hexColor) {
-      msg.channel.send('Missing parameter: `color`');
+      msg.channel.send('Missing parameter: `hex code`');
     } else if (!validateHexColor(hexColor)) {
-      msg.channel.send('Invalid parameter: `color`');
+      msg.channel.send('Invalid parameter: `hex code`');
     } else {
       const embed = new MessageEmbed();
       embed
@@ -23,8 +23,8 @@ export const cmd = new Command(
     }
   },
   {
-    description: 'See if the bot is alive',
-    usage: ['ping'],
+    description: 'Preview a color via hex code',
+    usage: ['color {hex code}'],
     aliases: ['c', 'col'],
   }
 );

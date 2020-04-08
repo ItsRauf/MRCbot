@@ -12,9 +12,9 @@ export const cmd = new Command(
     if (!rID) {
       msg.channel.send('Missing parameter: `role id`');
     } else if (!hexColor) {
-      msg.channel.send('Missing parameter: `color`');
+      msg.channel.send('Missing parameter: `hex code`');
     } else if (!validateHexColor(hexColor)) {
-      msg.channel.send('Invalid parameter: `color`');
+      msg.channel.send('Invalid parameter: `hex code`');
     } else {
       const role = await msg.guild?.roles.fetch(rID);
       if (role) {
@@ -33,8 +33,8 @@ export const cmd = new Command(
     }
   },
   {
-    description: 'See if the bot is alive',
-    usage: ['ping'],
+    description: "Change a role's color to a specified hex code",
+    usage: ['setcolor {rold id} {hex code} [reason]'],
     aliases: ['sc', 'setcol'],
   }
 );
