@@ -5,8 +5,8 @@ import { Command } from '../cmds/Command';
 
 const readDir = promisify(readdir);
 
-export async function EventLoader(MRC: MRCClient): Promise<void> {
-  const cmdFiles = await readDir('./build/events');
+export async function CommandLoader(MRC: MRCClient): Promise<void> {
+  const cmdFiles = await readDir('./build/cmds');
   for await (const file of cmdFiles) {
     if (file.endsWith('js') && file !== 'Command.js') {
       const { cmd } = await import(`../cmds/${file}`);
