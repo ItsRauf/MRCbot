@@ -32,8 +32,8 @@ export const cmd = new Command(
   async (MRC, msg, [hexColor, ...rID]) => {
     if (!msg.member?.permissions.has('MANAGE_ROLES')) {
       // Do Nothing
-    } else if (!rID) {
-      msg.channel.send('Missing parameter: `role id`');
+    } else if (!rID[0]) {
+      msg.channel.send('Missing parameter: `role id or name`');
     } else if (!hexColor) {
       msg.channel.send('Missing parameter: `hex code`');
     } else if (!validateHexColor(hexColor)) {
